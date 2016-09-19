@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Protocolo</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">14-INV-458</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Protocolo</a>
+</li>
+<li>
+  <a href="resultados.html">Resultados</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Protocolo</h1>
+
+</div>
+
+
+<p>Esta sección contiene el Protocolo para la ejecución del “Programa de Diagnóstico y Tratamiento Precoz del Cáncer de Cuello Uterino”, gestionado por la Dirección de Investigación &amp; Divulgación Científica de la Universidad del Norte. El Programa se ejecuta dentro del <em>Programa Paraguayo para el Desarrollo de la Ciencia y la Tecnología</em> (PROCIENCIA), Proyecto 14-INV-458, con fondos adjudicados por el <em>Consejo Nacional de Ciencia y Tecnología</em> (CONACYT) de la República del Paraguay según Resolución Nº 085/2015.</p>
+<hr />
+<div id="equipo-de-investigadores" class="section level2">
+<h2>Equipo de investigadores</h2>
+<p>El Investigador Principal del proyecto es el <strong>Prof. Dr. Alcides Chaux</strong>, Director de Investigación &amp; Divulgación Científica de la Universidad del Norte. El Investigador Principal está a cargo del diseño y supervisión del proyecto, contratación del personal técnico y laboratorial, supervisión del proceso de recolección y análisis de datos, revisión del diagnóstico citológico y anatomopatológico, y supervisión de la redacción de informes de investigación y documentos relacionados. Se podrán incorporar al Proyecto Investigadores Asociados, dependiendo de la conveniencia y disponibilidad.</p>
+<p>La <strong>Univ. Anahí Martínez</strong> es la Asistente de Investigación del Proyecto. La Asistente está a cargo del procesamiento de las muestras citológicas y tisulares, y de la recolección y análisis de datos y redacción de informes de investigación y documentos relacionados.</p>
+<p>La <strong>Dra. Cynthia Paredes</strong> es la especialista en Ginecología y Anatomía Patológica. La Especialista está a cargo del examen físico y ginecológico de la paciente, de la evaluación colposcópica, y de la toma y diagnóstico morfológico de muestras citológicas y tisulares de cuello uterino. La Especialista está a cargo también de interpretar los resultados obtenidos en el Programa a la paciente y de brindarle las indicaciones necesarias.</p>
+<hr />
+</div>
+<div id="objetivos-del-proyecto" class="section level2">
+<h2>Objetivos del proyecto</h2>
+<p><strong>Objetivos principales:</strong> Los objetivos principales de este proyecto pueden agruparse en 2 ejes:</p>
+<ul>
+<li>Detectar lesiones preneoplásicas y neoplásicas precoces del cuello uterino en mujeres en edad reproductiva.</li>
+<li>Ofrecer tratamiento precoz en aquellos casos que así lo ameriten (i.e., lesiones preneoplásicas de alto grado) y derivar a centros de mayor complejidad a aquellas pacientes que requieran tratamientos más complejos (v.g., aquellas pacientes con lesiones neoplásicas invasivas). A largo plazo, el objetivo principal del programa es reducir la incidencia y mortalidad del cáncer de cuello uterino.</li>
+</ul>
+<p><strong>Objetivos específicos:</strong> Los objetivos específicos de este proyecto pueden agruparse en 3 ejes:</p>
+<ul>
+<li>Detectar lesiones preneoplásicas y neoplásicas precoces del cuello uterino utilizando la técnica de citología ginecológica de Papanicolaou, mediante evaluación colposcópica.</li>
+<li>Confirmar el diagnóstico de la citología ginecológica mediante la biopsia de cuello uterino + legrado endocervical en los casos apropiados.</li>
+<li>Ofrecer el tratamiento apropiado para las lesiones preneoplásicas, ya sea seguimiento o LEEP, y derivar a otros centros hospitalarios aquellas pacientes que requieran tratamientos más complejos, ya con el diagnóstico anatomopatológico hecho.</li>
+</ul>
+<hr />
+</div>
+<div id="antecedentes" class="section level2">
+<h2>Antecedentes</h2>
+<p>El cáncer de cuello uterino constituye uno de los tumores malignos más frecuentes en las mujeres, estando su incidencia y mortalidad directamente relacionadas con la implementación exitosa de programas de detección precoz de lesiones preneoplásicas. Las técnicas de diagnóstico precoz ya han sido establecidas y están en uso a nivel mundial (en mayor o menor medida) desde hace más de 50 años, incluyendo principalmente la realización de la citología exfoliativa del cuello uterino, según la técnica de Papanicoloau.</p>
+<p>Sin embargo, el cáncer de cuello uterino sigue siendo la principal causa de muerte por cáncer en mujeres paraguayas. A diferencia de otros países, en los que el número de casos de cáncer de cuello uterino ha disminuido con el tiempo, en el nuestro se mantiene. Las razones de esto están relacionadas con la efectividad de los programas de prevención, y específicamente con la implementación del diagnóstico por citología exfoliativa del cuello uterino en todas las mujeres en edad reproductiva a nivel masivo. El fallo en la implementación generalizada del Papanicolaou y faltas de control de calidad adecuados explicarían el por qué estos programas de prevención no han resultado tan efectivos en nuestro país. El Ministerio de Salud Pública y Bienestar Social cuenta con un programa de prevención del cáncer de cuello uterino, pero el servicio ofrecido es subóptimo, demorándose el diagnóstico muchas veces semanas o incluso meses.</p>
+<p>Esto hace que los diagnósticos no lleguen a manos de los profesionales médicos a tiempo, con lo cual no pueden instaurarse medidas de control apropiadas. Además, el costo de diagnóstico de confirmación anatomopatológico (i.e., biopsia de cuello uterino + legrado endocervical) corre muchas veces a costa del paciente, representando esto una importante limitación para la confirmación del diagnóstico citológico.</p>
+<p>Finalmente, muchas lesiones preneoplásicas de cuello uterino pueden tratarse mediante la técnica del LEEP (por <em>Loop Electrosurgical Excision Procedure</em>, procedimiento de excisión electroquirúrgica por asa) pero los costos de dichos tratamientos hacen que los pacientes de escasos recursos no puedan acceder a los mismos. Todas estas variables actuando en conjunto conducen a un fallo en la implementación exitosa del programa de prevención del cáncer de cuello uterino a nivel público.</p>
+<p>Con el fin de contribuir a la disminución del número de muertes por cáncer de cuello uterino, lanzamos el “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” de la Universidad del Norte, mediante el cual se ofrecerá a la población general el diagnóstico de Papanicolaou gratuitamente. Estos diagnósticos se realizarán de manera rápida y por profesionales altamente entrenados, con estrictos controles de calidad.</p>
+<p>El “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” ofrecerá también de manera gratuita la confirmación diagnóstica mediante la biopsia de cuello uterino + legrado endocervical, por lo que aquellas pacientes que presenten lesiones preneoplásicas en la citología podrán ser categorizadas apropiadamente en aquellas que requieren seguimiento únicamente o en aquellas que requieren una intervención quirúrgica.</p>
+<p>Dentro del último grupo, el “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” ofrecerá de manera gratuita la realización del tratamiento por LEEP, en el caso de que corresponda al tratamiento más apropiado, o derivará a la paciente a un centro médico de mayor complejidad, con toda su historia clínica y diagnósticos, para un mejor tratamiento.</p>
+<hr />
+</div>
+<div id="marco-teorico" class="section level2">
+<h2>Marco teórico</h2>
+<p>El cáncer de cuello uterino puede considerarse como uno de los pocos tumores malignos del Siglo XXI que puede ser prevenido a través de vacunación y/o detección precoz apropiadas. Sin embargo, continúa siendo un problema mayor en muchas sociedades, principalmente en aquellas regiones del mundo con recursos económicos limitados. Basándose en tasas crudas de incidencia, el cáncer de cuello uterino es el 3º tipo más frecuente de cáncer en mujeres alrededor del mundo, después del cáncer de mama y el colorrectal.</p>
+<p>La OMS estima que aparecen 528.000 nuevos casos cada año, siendo la 4º causa más frecuente de muerte por cáncer (266.000 muertes en 2012) en mujeres a nivel mundial. La mayoría de los nuevos casos (85%) aparece en regiones geográficas menos desarrolladas. Sin embargo, si se utilizan tasas de incidencia ajustadas por edad, el cáncer de cuello uterino se convierte en el 2º tipo de cáncer más frecuente en mujeres a nivel mundial<span class="citation"><sup>1</sup></span> y se ubica 3º en mortalidad después del cáncer de mama y de pulmón.<span class="citation"><sup>1,2</sup></span></p>
+<p>Dentro de todos los tumores femeninos, el cáncer de cuello uterino es el más frecuente en África Sub-Sahariana, Asia Sur Central y Melanesia, ocupa el 2º lugar en América Latina y el Caribe, y el 3º lugar en Europa Central y Este y en el Medio Oriente y África Norte. De manera lamentable, no existen datos actuales acerca de la incidencia del cáncer de cuello uterino en el Paraguay,<span class="citation"><sup>3</sup></span> lo que implica un fallo importante a nivel del Ministerio de Salud Pública y Bienestar Social. Sin embargo, estimaciones hechas por la OMS indican que el cáncer de cuello uterino es el cáncer más frecuente en mujeres paraguayas en edad reproductiva.<span class="citation"><sup>1</sup></span></p>
+<p>El cáncer de cuello uterino afecta primariamente a mujeres jóvenes, con consecuencias desastrosas no sólo a nivel individual, sino también socialmente en términos de crianza de hijos y fuerza laboral. Este hecho resulta en más años de vida perdidos proporcionalmente, comparados con otros tipos de cánceres. Más aún, la carga de muertes prematuras, contabilizadas como años de vida perdidos, es inversamente proporcional al ingreso.</p>
+<p>El cáncer de cuello uterino es la principal causa de años de vida perdidos debido al cáncer en países con bajos ingresos, dando cuenta de 3.4 millones de años de vida perdidos a nivel mundial. Es además responsable del 22% de las muertes prematuras en mujeres en edad reproductiva debidas al cáncer.<span class="citation"><sup>4</sup></span> Categóricamente, el cáncer de cuello uterino es una enfermedad que surge de la desigualdad social, un paradigma de la disparidad sanitaria mundial.<span class="citation"><sup>5</sup></span></p>
+<p>Las marcadas disminuciones en incidencia y mortalidad observadas en la mayoría de los países desarrollados después de la introducción de programas bien organizados de diagnóstico precoz no han sido observadas en América Latina. Sólo algunos pocos países han sido capaces de implementar la infraestructura comprehensiva necesaria para proveer cobertura amplia con servicios diagnósticos y terapéuticos de alta calidad, con la suficiente sustentabilidad para obtener los niveles de reducción en la carga del cáncer de cuello uterino observados en los países más favorecidos.</p>
+<p>En el Paraguay, debido a la falta de datos y un programa efectivo de diagnóstico precoz, no es ni siquiera posible estimar el impacto que dichas medidas pudieran tener. Estos hallazgos indican la necesidad de implementar medidas disponibles actualmente para disminuir la incidencia y mortalidad del cáncer de cuello uterino, principalmente programas de detección y tratamiento precoz de la enfermedad.</p>
+<hr />
+</div>
+<div id="plan-de-trabajo" class="section level2">
+<h2>Plan de trabajo</h2>
+<p>El tiempo de duración del proyecto es de 12 meses. Se espera reclutar 1000 pacientes para evaluación ginecológica, colposcópica y citológica. Se estima que 200 de estas pacientes presentarán alteraciones que ameriten una biopsia de cuello uterino + legrado endocervical. De estas 200 pacientes, se estima que 50 necesitarán de un LEEP basándose en los resultados de la biopsia + legrado.</p>
+<p>El proyecto estará dividido en 4 fases: promoción, recolección de datos, análisis de datos, y divulgación de resultados.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Promoción:</strong> El Programa se iniciará con la promoción del mismo a través de medios de difusión masiva de la información, ya sean impresos (v.g., diarios, revistas), radiales o digitales (v.g., redes sociales). El objetivo de esta promoción será el de informar suficientemente a la comunidad de la disponibilidad de los servicios ofrecidos por el Programa, enfatizando la gratuidad del mismo. La promoción del Programa continuará a lo largo de la fase de recolección de datos.</p></li>
+<li><p><strong>Recolección de datos:</strong> La fase de recolección de datos constará de hasta 7 etapas, y tendrá como objetivo recolectar los datos necesarios para satisfacer los objetivos de Programa. Las etapas de esta fase se describen a continuación.</p>
+<ul>
+<li><strong>Primera consulta ginecológica y toma de muestra citológica.</strong> La recolección de datos se iniciará con una consulta ginecológica, llevada a cabo por la Especialista que procederá a la entrevista médica y el examen físico relevante. En esta primera consulta se procederá al examen colposcópico y toma de muestra de citología ginecológica. Los detalles del examen colposcópico se consignarán en un informe específico. Este informe colposcópico se incluirá en la Historia Clínica de la paciente, que incluirá toda la documentación generada de aquí en adelante. La consulta ginecológica se llevará a cabo en el Policlínico UniNorte, el que cuenta con un Consultorio de Ginecología debidamente equipado. Se establecerá un horario específico para las consultas y tomas de muestras y una Secretaría de Admisión dentro del Policlínico UniNorte.</li>
+<li><strong>Diagnóstico citológico.</strong> La muestra citológica será teñida siguiendo la técnica de Papanicolaou en un área apropiada habilitada para el efecto dentro del edificio del Policlínico UniNorte. La Asistente de Investigación y los Auxiliares de Investigación podrán participar del procesamiento y tinción de las muestras citológicas. Posteriormente, la Especialista examinará y clasificará la muestra citológica siguiendo la última clasificación de Bethesda para lesiones epiteliales de cuello uterino.</li>
+<li><strong>Segunda consulta ginecológica y evolución del caso.</strong> Una vez hecho el diagnóstico citológico la paciente consultará por segunda vez para recibir los resultados del informe diagnóstico. En el caso de que la muestra citológica resulte dentro de límites normales se le indicará a la paciente que la siguiente consulta deberá ser dentro de 12 meses. En el caso de que el informe diagnóstico indique la sospecha de una lesión preneoplásica (“citología positiva”) se procederá a la biopsia de cuello uterino + legrado endocervical, ya sea en esa misma consulta o en una nueva consulta.</li>
+<li><strong>Biopsia de cuello uterino + legrado endocervical.</strong> El especialista médico procederá a la biopsia de cuello uterino + legrado endocervical. Las muestras serán procesadas por la Especialista para la obtención de las láminas histológicas correspondientes al procesamiento del material. Las láminas histológicas serán evaluadas por la Especialista y los resultados discutidos con otros miembros del equipo de investigadores, de ser apropiado. Una vez finalizada la evaluación de las láminas histológicas se procederá a la redacción del informe anatomopatológico.</li>
+<li><strong>Tercera consulta ginecológica y evolución del caso.</strong> Una vez hecho el diagnóstico anatomopatológico las pacientes con una citología positiva consultarán por tercera vez. En dicha consulta se informará a la paciente de los resultados de la biopsia + legrado, y se establecerá la conducta a seguir. En el caso de que el diagnóstico anatomopatológico indique una lesión preneoplásica se ofrecerá a la paciente el tratamiento por LEEP. En el caso de que el informe anatomopatológico indique una lesión neoplásica se derivará a la paciente a un centro médico de mayor complejidad, entregándole a la paciente una copia de toda su Historia Clínica.</li>
+<li><strong>Tratamiento por LEEP.</strong> En el caso de que resulte apropiado según el diagnóstico anatomopatológico y la paciente opte por este tratamiento, se procederá a la excisión del cuello uterino mediante LEEP. El espécimen quirúrgico del LEEP será procesado para fijación en formol al 10% en un área apropiada habilitada para el efecto dentro del edificio del Policlínico UniNorte. Las muestras serán procesadas por la Especialista para la obtención de las láminas histológicas correspondientes al procesamiento del material. Las láminas histológicas serán evaluada por la Especialista y los resultados discutidos con otros miembros del equipo de investigadores, de ser apropiado. Una vez finalizada la evaluación de las láminas histológicas se procederá a la redacción del informe anatomopatológico.</li>
+<li><strong>Cuarta consulta ginecológica y evolución del caso.</strong> Una vez hecho el diagnóstico anatomopatológico del especimen quirúgico de LEEP las pacientes que optaron por este tratamiento consultarán nuevamente. En esta consulta la Especialista discutirá con la paciente el protocolo a seguir, así como agendará las consultas subsiguientes de acuerdo a las características del caso.</li>
+</ul></li>
+<li><p><strong>Análisis de datos:</strong> En la fase de análisis de datos se procederá a la creación de una base de datos conteniendo toda la información recolectada. El análisis de los datos se realizará con R sobre la base de datos prolija. Todos los resultados serán almacenados en un repositorio online internacional.</p></li>
+<li><p><strong>Divulgación de datos:</strong> En la fase de divulgación de datos se procederá a la redacción del informe de investigación, el que se utilizará para generar materiales informativos para la comunidad académica y el público en general. También se redactará al menos un artículo de investigación, el que será enviado para publicación en una revista científica.</p></li>
+</ol>
+<hr />
+</div>
+<div id="relevancia" class="section level2">
+<h2>Relevancia</h2>
+<p><strong>Relevancia social:</strong> Este “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” permitirá que pacientes de escasos recursos económicos puedan recibir un diagnóstico oportuno y gratuito, incluyendo desde el diagnóstico citológico hasta el tratamiento de lesiones preneoplásicas. Socialmente, este Programa permitirá a largo plazo la reducción de la incidencia y mortalidad del cáncer de cuello uterino, enfocándose en la población más susceptible y desprotegida. Este programa Pretende además paliar todas las deficiencias surgidas en programas similares que son ejecutados por entidades públicas. De esta manera, se obtendrá una mayor inclusión social de las pacientes en edad reproductiva en programas de prevención del cáncer de cuello uterino.</p>
+<p><strong>Relevancia científica:</strong> Este “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” permitirá el establecimiento de una línea concreta de investigación en cáncer de cuello uterino desde una Universidad privada. Este Programa permitirá asimismo el fortalecimiento en las capacidades de investigación y la gestión de conocimientos relevantes, ayudando a proteger, promocionar y restaurar la salud humana enfocándose en el diagnóstico precoz y la prevención. Finalmente, el establecimiento de esta línea de investigación abrirá oportunidades para líneas de investigación paralelas que puedan utilizar el material generado (v.g., datos clínicos, muestras tisulares) para evaluar nuevas preguntas de investigación (v.g., factores pronósticos moleculares en cánceres del cuello uterino).</p>
+<p><strong>Relevancia contemporánea:</strong> Este “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” presenta trascendencia contemporánea al enfocarse en la implementación de medidas preventivas y de diagnóstico precoz del cáncer de cuello uterino, uno de los tumores malignos más frecuentes en las sociedades actuales. Al enfocarse en el aspecto preventivo y de diagnóstico precoz este Programa se alinea con la tendencia actual de poner el énfasis en la prevención y el diagnóstico precoz, lo que permitirá una asistencia sanitaria comunitaria más costo-efectiva.</p>
+<hr />
+</div>
+<div id="estrategia-de-divulgacion" class="section level2">
+<h2>Estrategia de divulgación</h2>
+<p>El “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” permitirá evaluar independientemente los datos epidemiológicos acerca de la enfermedad proveídos por entidades gubernamentales y organizaciones internacionales. Mediante este Programa se generará información suficiente sobre una cohorte de 1000 pacientes, cohorte que podrá ser seguida a mediano y largo plazo, con lo que se podrán obtener datos más precisos acerca de las características de la enfermedad en la población paraguaya. También permitirá crear conciencia a nivel social de la importancia de la detección precoz de las lesiones preneoplásicas que podrían evolucionar a un cáncer de cuello uterino.</p>
+<p><strong>Estrategia de transferencia de conocimientos a los beneficiarios involucrados:</strong> Mediante el “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” las pacientes recibirán información apropiada y científicamente correcta acerca de la importancia y utilidad de la citología ginecológica, aprenderán a interpretar correctamente los resultados de la citología ginecológica, y comprenderán la importancia de la confirmación diagnóstica mediante la biopsia de cuello uterino. Finalmente, comprenderán las opciones de tratamiento que existen para las lesiones prenoeplásicas del cuello uterino. El especialista médico y el equipo de investigadores proveerán de materiales informativos, según conveniencia.</p>
+<p><strong>Plan de divulgación de resultados a la sociedad:</strong> Los resultados del “Programa de Prevención y Diagnóstico Precoz del Cáncer de Cuello Uterino” serán divulgados mediante canales académicos y no académicos. En el ámbito académico, los resultados se divulgarán mediante Congresos y Simposios, ya sea organizados por la Universidad del Norte u otras instituciones académicas, y el reporte de investigación final será publicado en una revista científica. En el ámbito no académico, estos resultados se divulgarán al público en general mediante entrevistas radiales y televisivas, además de medios impresos y digitales, y redes sociales.</p>
+<hr />
+</div>
+<div id="referencias" class="section level2 unnumbered">
+<h2>Referencias</h2>
+<div id="refs" class="references">
+<div id="ref-Ferlay2010">
+<p>1. Ferlay J, Shin H, Bray F, Forman D, Mathers C, Parkin D. <em>GLOBOCAN (2008) Cancer Incidence and Mortality Worldwide: IARC Cancer Base No. 10</em>. Lyon: International Agency for Research on Cancer; 2010.</p>
+</div>
+<div id="ref-Arbyn2011">
+<p>2. Arbyn M, Castellsagué X, De sanjosé S, et al. Worldwide burden of cervical cancer in 2008. <em>Ann Oncol</em>. 2011;22(12):2675-2686. doi:<a href="https://doi.org/10.1093/annonc/mdr015">10.1093/annonc/mdr015</a>.</p>
+</div>
+<div id="ref-Forman2014">
+<p>3. Forman D, Bray F, Brewster D, et al. <em>Cancer Incidence in Five Continents, Vol. X (IARC Scientific Publication No. 164)</em>. Lyon: International Agency for Research on Cancer; 2014.</p>
+</div>
+<div id="ref-Mathers2008">
+<p>4. Mathers C. <em>The Global Burden of Disease: 2004 Update</em>. Geneva: World Health Organization; 2008.</p>
+</div>
+<div id="ref-Varughese2010">
+<p>5. Varughese J, Richman S. Cancer care inequity for women in resource-poor countries. <em>Rev Obstet Gynecol</em>. 2010;3(3):122-132. doi:<a href="https://doi.org/10.3909/riog0107">10.3909/riog0107</a>.</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
