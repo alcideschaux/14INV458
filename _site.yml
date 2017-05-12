@@ -1,0 +1,22 @@
+name: "14-INV-458"
+output_dir: "."
+
+navbar:
+    title: "14-INV-458"
+    left:
+        - text: "Protocolo"
+          href: index.html
+        - text: "Analisis descriptivo"
+          href: descriptivo.html
+        - text: "Anexos"
+          href: anexos.html
+
+output:
+    html_document:
+        theme: cerulean
+        toc: yes
+        toc_float:
+            collapsed: true
+        css: styles.css
+
+

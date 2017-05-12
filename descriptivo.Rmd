@@ -1,0 +1,250 @@
+---
+title: "**Analisis descriptivo de datos**"
+---
+
+```{r global, echo = FALSE, message = FALSE, warning = FALSE}
+# Global
+library(knitr)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# Libraries
+library(simpleR)
+library(forcats)
+
+# Data
+load("DF.Rdata")
+```
+
+**Fecha de última actualización:** `r Sys.Date()`  
+**Número de pacientes a la fecha:** `r nrow(DF)`
+
+***
+
+\   
+
+# Datos ginecologicos
+## Edad
+```{r edad}
+x <- DF$edad
+tbl_nice(x)
+g_nice(x)
+```
+
+## Menarca
+```{r menarca}
+x <- DF$menarca
+tbl_nice(x)
+g_nice(x, bin = 1)
+```
+
+## Tipo menstrual
+```{r menstrual}
+x <- DF$menstrual %>% fct_infreq()
+tbl_nice(x)
+g_nice(x)
+```
+
+## Embarazo previo
+```{r hijos}
+x <- DF$hijos
+tbl_nice(x)
+g_nice(x)
+```
+
+## Numero de embarazos previos (en pacientes embarazadas)
+```{r embarazos}
+x <- DF$embarazos[DF$embarazos > 0]
+tbl_nice(x)
+g_nice(x, bin = 1)
+```
+
+## Uso de anticonceptivos
+```{r anticonceptivo_uso}
+x <- DF$anticonceptivo_uso
+tbl_nice(x)
+g_nice(x) 
+```
+
+## ¿Se ha realizado alguna vez el Pap?
+```{r previo_pap}
+x <- DF$previo_pap
+tbl_nice(x)
+g_nice(x) 
+```
+
+## ¿Hace cuantos meses se realizo por ultima vez el Pap?
+```{r previo_meses}
+x <- DF$previo_meses
+tbl_nice(x)
+g_nice(x, bin = 24) 
+```
+
+## ¿Cual fue el resultado previo de su Pap?
+```{r previo_resultado}
+x <- DF$previo_resultado %>% fct_lump(other_level = "Otro resultado")
+tbl_nice(x)
+g_nice(x)
+
+x <- DF$previo_resultado[DF$previo_resultado != "Citología normal"] %>% droplevels() %>% fct_infreq()
+tbl_nice(x)
+```
+
+## Edad de inicio de las relaciones sexuales
+```{r irs}
+x <- DF$irs
+tbl_nice(x)
+g_nice(x, bin = 1) 
+```
+
+## Numero de parejas sexuales
+```{r parejas}
+x <- DF$parejas
+tbl_nice(x)
+g_nice(x, bin = 2) 
+```
+
+## Antecedente de enfermedad de transmisión sexual (ETS)
+```{r ets}
+x <- DF$ets
+tbl_nice(x)
+g_nice(x)
+```
+
+## Antecedente de tabaquismo
+```{r fumadora}
+x <- DF$fumadora
+tbl_nice(x)
+g_nice(x)
+```
+
+## Antecedente de ducha vaginal
+```{r ducha}
+x <- DF$ducha
+tbl_nice(x)
+g_nice(x)
+```
+
+# Hallazgos colposcopicos
+## Calidad de la evaluacion
+```{r colpo_calidad}
+x <- DF$colpo_calidad
+tbl_nice(x)
+g_nice(x)
+```
+
+## Motivo de evaluacion insatisfactoria
+```{r colpo_insatisfactoria}
+x <- fct_infreq(DF$colpo_insatisfactoria)
+tbl_nice(x)
+g_nice(x)
+```
+
+## Evaluacion colposcopica
+```{r colpo_evaluacion}
+x <- fct_infreq(DF$colpo_evaluacion)
+tbl_nice(x)
+g_nice(x)
+```
+
+## Hallazgos colposcopicos normales
+```{r colpo_normal}
+x <- DF$colpo_normal
+tbl_nice(x)
+g_nice(x)
+```
+
+## Hallazgos colposcopicos anormales
+```{r colpo_anormal}
+x <- fct_lump(DF$colpo_anormal, n = 3, other_level = "Otros")
+tbl_nice(x)
+g_nice(x)
+
+x <- fct_infreq(DF$colpo_anormal)
+tbl_nice(x)
+```
+
+## Indicaciones tras colposcopia
+```{r colpo_indicaciones}
+x <- fct_lump(DF$colpo_indicaciones, other_level = "Otras", n = 3) %>% fct_infreq()
+tbl_nice(x)
+g_nice(x)
+```
+
+# Hallazgos citologicos
+## Calidad del extendido citologico
+```{r pap_calidad}
+x <- DF$pap_calidad
+tbl_nice(x)
+g_nice(x)
+```
+
+## Categoria diagnostica del la citologia
+```{r pap_categoria}
+x <- DF$pap_categoria
+tbl_nice(x)
+g_nice(x)
+```
+
+## Hallazgos microbiologicos
+```{r pap_micro}
+x <- DF$pap_micro
+tbl_nice(x)
+g_nice(x)
+```
+
+## Hallazgos reactivos
+```{r pap_reactivo}
+x <- DF$pap_reactivo
+tbl_nice(x)
+g_nice(x)
+```
+
+## Anormalidades en celulas epiteliales
+```{r pap_epitelial}
+x <- DF$pap_epitelial
+tbl_nice(x)
+g_nice(x)
+```
+
+## Indicaciones tras citologia
+```{r pap_indicaciones}
+x <- fct_infreq(DF$pap_indicaciones)
+tbl_nice(x)
+g_nice(x)
+```
+
+# Hallazgos histopatologicos
+## Biopsia de cuello uterino + legrado endocervical
+```{r bx}
+x <- fct_rev(DF$bx)
+tbl_nice(x)
+g_nice(x)
+```
+
+## Diagnostico de la biopsia de cuello uterino
+```{r bx_dx}
+x <- fct_infreq(DF$bx_dx)
+tbl_nice(x)
+g_nice(x)
+```
+
+## Extension al canal endocervical
+```{r lec_dx}
+x <- DF$lec_dx
+tbl_nice(x)
+g_nice(x)
+```
+
+## LEEP
+```{r leep}
+x <- fct_rev(DF$leep)
+tbl_nice(x)
+g_nice(x)
+```
+
+## Margen quirurgico del LEEP
+```{r leep_margen}
+x <- fct_infreq(DF$leep_margen)
+tbl_nice(x)
+g_nice(x)
+```

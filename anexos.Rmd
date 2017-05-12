@@ -1,0 +1,45 @@
+---
+title: "Anexos"
+output:
+    html_document:
+        toc: false
+        css: styles_anexo.css
+---
+
+![Afiche promocial del Programa](anexos/1-A.png)
+
+![Volante divulgativo del Programa](anexos/1-B.jpg)
+
+![Láminas citológicas teñidas con la técnica de Papanicolaou y microscopio Zeiss Axio.Lab utilizado para el diagnóstico](anexos/2.2-A.jpg)
+
+![Láminas histopatológicas de biopsia de cuello uterino + legrado endocervical](anexos/2.2-B.jpg)
+
+![Láminas histopatológicas de LEEP](anexos/2.2-C.jpg)
+
+![Entrada al Policlínico de la UniNorte en el que se encuentra el Consultorio de Ginecología del Programa](anexos/2.3-A.jpg)
+
+![Secretaría del Policlínico UniNorte en la cual se fichan a las pacientes para la consulta ginecológica](anexos/2.3-B.jpg)
+
+![Entrada al Consultorio de Ginecología del Programa](anexos/2.3-C.jpg)
+
+![Consultorio de Ginecología mostrando el área de entrevista a la pacientes](anexos/2.3-D.jpg)
+
+![Consultorio de Ginecología mostrando el acceso al área de exámen colposcópico](anexos/2.3-E.jpg)
+
+![Consultorio mostrando la camilla ginecológica en la que se realiza el exámen colposcópico y la toma de muestras citológicas.](anexos/2.3-F.jpg)
+
+![Detalle del colposcopio utilizando para examinar el cuello uterino de las pacientes.](anexos/2.3-G.jpg)
+
+![Área de Archivo de las historias clínicas e informes, con las carpetas conteniendo las historias clínicas, informes, reportes, etc., de las pacientes que ingresan al Programa](anexos/2.3-H.jpg)
+
+![Jornada de Extensión para promocionar el Programa y captar pacientes de la comunidad.](anexos/4-A.jpg)
+
+![Certificado del Encuentro de Investigadores 2016 en el que se presentaron los resultados preliminares del Programa.](anexos/4-B.png)
+
+![Afiche del III Simposio Internacional de Medicina y Ciencias de la Salud (2016) organizado por la Facultad de Postgrado de la Universidad del Norte en el que fue presentado el Proyecto.](anexos/4-C.jpg)
+
+![Programa del III Simposio Internacional de Medicina y Ciencias de la Salud (2016) organizado por la Facultad de Postgrado de la Universidad del Norte en el que fue presentado el Proyecto](anexos/4-D.jpg)
+
+![Afiche del IV Simposio Internacional de Medicina y Ciencias de la Salud (2017) organizado por la Facultad de Postgrado de la Universidad del Norte en el que fue presentado el Proyecto.](anexos/IVSIMECSA-afiche.jpeg)
+
+![Programa del IV Simposio Internacional de Medicina y Ciencias de la Salud (2017) organizado por la Facultad de Postgrado de la Universidad del Norte en el que fue presentado el Proyecto](anexos/IVSIMECSA-programa.jpeg)
