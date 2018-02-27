@@ -13,6 +13,10 @@ library(forcats)
 
 # Data
 load("DF.Rdata")
+
+# Seleccionando los primeros 655 casos para el póster del informe técnico de avance No. 2
+# DF <- DF[1:655 , ]
+# Esto se debe borrar para actualizar el reporte
 ```
 
 **Fecha de última actualización:** `r Sys.Date()`  

@@ -23,8 +23,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -33,10 +33,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -300,7 +302,7 @@ div.tocify {
 </div>
 
 
-<p><strong>Fecha de última actualización:</strong> 2017-05-12</p>
+<p><strong>Fecha de última actualización:</strong> 2018-02-27</p>
 <hr />
 <p> </p>
 <p>Esta sección contiene el Protocolo para la ejecución del “Programa de Diagnóstico y Tratamiento Precoz del Cáncer de Cuello Uterino”, gestionado por la Dirección de Investigación &amp; Divulgación Científica de la Universidad del Norte. El Programa se ejecuta dentro del <em>Programa Paraguayo para el Desarrollo de la Ciencia y la Tecnología</em> (PROCIENCIA), Proyecto 14-INV-458, con fondos adjudicados por el <em>Consejo Nacional de Ciencia y Tecnología</em> (CONACYT) de la República del Paraguay según Resolución Nº 085/2015.</p>

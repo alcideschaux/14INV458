@@ -1,7 +1,10 @@
 # Data
-library(googlesheets)
-DB <- gs_title("14INV458DB")
-DF <- gs_read(DB, "14INV458DB")
+# library(googlesheets)
+# DB <- gs_title("14INV458DB")
+# DF <- gs_read(DB, "14INV458DB")
+
+library(readxl)
+DF <- read_excel("data/14INV458DB.xlsx")
 
 library(dplyr)
 library(forcats)
@@ -12,7 +15,6 @@ DF[ , chrcols] <- lapply(DF[ , chrcols], factor)
 
 DF <- DF %>% 
     select(
-        ci,
         edad,
         ciudad,
         menarca,
