@@ -8,7 +8,7 @@ library(knitr)
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 # Libraries
-library(simpleR)
+library(simpleRspa)
 library(forcats)
 
 # Data

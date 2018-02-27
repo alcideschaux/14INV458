@@ -9,26 +9,26 @@ csl: ama.csl
 
 \ 
 
-Esta sección contiene el Protocolo para la ejecución del "Programa de Diagnóstico y Tratamiento Precoz del Cáncer de Cuello Uterino", gestionado por la Dirección de Investigación & Divulgación Científica de la Universidad del Norte. El Programa se ejecuta dentro del *Programa Paraguayo para el Desarrollo de la Ciencia y la Tecnología* (PROCIENCIA), Proyecto 14-INV-458, con fondos adjudicados por el *Consejo Nacional de Ciencia y Tecnología* (CONACYT) de la República del Paraguay según Resolución Nº 085/2015.
+Esta sección contiene el Informe Final del "Programa de Diagnóstico y Tratamiento Precoz del Cáncer de Cuello Uterino", gestionado por la Dirección de Investigación & Divulgación Científica de la Universidad del Norte. El Programa se ejecutó dentro del *Programa Paraguayo para el Desarrollo de la Ciencia y la Tecnología* (PROCIENCIA), Proyecto 14-INV-458, con fondos adjudicados por el *Consejo Nacional de Ciencia y Tecnología* (CONACYT) de la República del Paraguay según Resolución Nº 085/2015.
 
 ***
 
 ## Equipo de investigadores
-El Investigador Principal del proyecto es el __Prof. Dr. Alcides Chaux__, Director de Investigación & Divulgación Científica de la Universidad del Norte. El Investigador Principal está a cargo del diseño y supervisión del proyecto, contratación del personal técnico y laboratorial, supervisión del proceso de recolección y análisis de datos, revisión del diagnóstico citológico y anatomopatológico, y supervisión de la redacción de informes de investigación y documentos relacionados. Se podrán incorporar al Proyecto Investigadores Asociados, dependiendo de la conveniencia y disponibilidad.
+El Investigador Principal del proyecto fue el __Prof. Dr. Alcides Chaux__, Director de Investigación & Divulgación Científica de la Universidad del Norte. El Investigador Principal estuvo a cargo del diseño y supervisión del proyecto, contratación del personal técnico y laboratorial, supervisión del proceso de recolección y análisis de datos, revisión del diagnóstico citológico y anatomopatológico, y supervisión de la redacción de informes de investigación y documentos relacionados.
 
-La __Bioq. Anahí Martínez__ es la Asistente de Investigación del Proyecto. La Asistente está a cargo del procesamiento de las muestras citológicas y tisulares, y de la recolección y análisis de datos y redacción de informes de investigación y documentos relacionados.
+La __Bioq. Anahí Martínez__ fue la Asistente de Investigación del Proyecto. La Asistente estuvo a cargo del procesamiento de las muestras citológicas y tisulares, y de la recolección y análisis de datos y redacción de informes de investigación y documentos relacionados.
 
-La __Dra. Cynthia Paredes__ es la especialista en Ginecología y Anatomía Patológica. La Especialista está a cargo del examen físico y ginecológico de la paciente, de la evaluación colposcópica, y de la toma y diagnóstico morfológico de muestras citológicas y tisulares de cuello uterino. La Especialista está a cargo también de interpretar los resultados obtenidos en el Programa a la paciente y de brindarle las indicaciones necesarias.
+La __Dra. Cynthia Paredes__ fue la especialista en Ginecología y Anatomía Patológica. La Especialista estuvo a cargo del examen físico y ginecológico de la paciente, de la evaluación colposcópica, y de la toma y diagnóstico morfológico de muestras citológicas y tisulares de cuello uterino. La Especialista estuvo a cargo también de interpretar los resultados obtenidos en el Programa a la paciente y de brindarle las indicaciones necesarias.
 
 ***
 
 ## Objetivos del proyecto
-__Objetivos principales:__ Los objetivos principales de este proyecto pueden agruparse en 2 ejes:
+__Objetivos principales:__ Los objetivos principales de este proyecto se agruparon en 2 ejes:
 
 - Detectar lesiones preneoplásicas y neoplásicas precoces del cuello uterino en mujeres en edad reproductiva.
 - Ofrecer tratamiento precoz en aquellos casos que así lo ameriten (i.e., lesiones preneoplásicas de alto grado) y derivar a centros de mayor complejidad a aquellas pacientes que requieran tratamientos más complejos (v.g., aquellas pacientes con lesiones neoplásicas invasivas). A largo plazo, el objetivo principal del programa es reducir la incidencia y mortalidad del cáncer de cuello uterino.
 
-__Objetivos específicos:__ Los objetivos específicos de este proyecto pueden agruparse en 3 ejes:
+__Objetivos específicos:__ Los objetivos específicos de este proyecto se agruparon en 3 ejes:
 
 - Detectar lesiones preneoplásicas y neoplásicas precoces del cuello uterino utilizando la técnica de citología ginecológica de Papanicolaou, mediante evaluación colposcópica.
 - Confirmar el diagnóstico de la citología ginecológica mediante la biopsia de cuello uterino + legrado endocervical en los casos apropiados.
@@ -72,7 +72,7 @@ En el Paraguay, debido a la falta de datos y un programa efectivo de diagnóstic
 ***
 
 ## Plan de trabajo
-sSe espera reclutar 1000 pacientes para evaluación ginecológica, colposcópica y citológica. Se estima que 80 de estas pacientes presentarán alteraciones que ameriten una biopsia de cuello uterino + legrado endocervical. De estas 80 pacientes, se estima que 50 necesitarán de un LEEP basándose en los resultados de la biopsia + legrado.
+Se espera reclutar 1000 pacientes para evaluación ginecológica, colposcópica y citológica. Se estima que 80 de estas pacientes presentarán alteraciones que ameriten una biopsia de cuello uterino + legrado endocervical. De estas 80 pacientes, se estima que 50 necesitarán de un LEEP basándose en los resultados de la biopsia + legrado.
 
 El proyecto estará dividido en 4 fases: promoción, recolección de datos, análisis de datos, y divulgación de resultados.
 
